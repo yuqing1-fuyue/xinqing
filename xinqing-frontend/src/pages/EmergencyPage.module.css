@@ -1,0 +1,54 @@
+.page { padding: 100px 0 60px; min-height: 100vh; }
+
+.header { display: flex; align-items: center; gap: 16px; margin-bottom: 36px; }
+.headerIcon { font-size: 48px; filter: drop-shadow(0 4px 8px rgba(231,76,60,0.25)); }
+.title { font-size: 28px; font-weight: 800; color: var(--text-primary); line-height: 1.2; }
+.subtitle { font-size: 14px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5; }
+
+/* 热线 */
+.hotlineSection { margin-bottom: 28px; }
+.hotlineCard { display: flex; align-items: center; gap: 16px; padding: 20px 24px; background: rgba(255,255,255,0.65); backdrop-filter: blur(12px); border-radius: 18px; border: 1px solid rgba(255,140,105,0.08); margin-bottom: 12px; transition: all 0.2s; }
+.hotlineCard:hover { background: rgba(255,255,255,0.85); box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+.hotlineUrgent { border: 2px solid rgba(231,76,60,0.2); background: rgba(231,76,60,0.03); }
+.hotlineIcon { font-size: 32px; flex-shrink: 0; }
+.hotlineInfo { flex: 1; }
+.hotlineName { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 2px; }
+.hotlineDesc { font-size: 12px; color: var(--text-light); }
+.hotlinePhone { font-size: 20px; font-weight: 800; color: #E74C3C; white-space: nowrap; text-decoration: none; padding: 8px 16px; background: rgba(231,76,60,0.06); border-radius: 12px; transition: all 0.2s; letter-spacing: 0.5px; }
+.hotlinePhone:hover { background: rgba(231,76,60,0.12); }
+
+/* 紧急横幅 */
+.banner { display: flex; align-items: center; gap: 16px; padding: 20px 24px; background: linear-gradient(135deg, rgba(231,76,60,0.06), rgba(244,162,97,0.06)); border-radius: 18px; border: 1.5px solid rgba(231,76,60,0.1); margin-bottom: 36px; }
+.bannerIcon { font-size: 32px; }
+.bannerTitle { font-size: 16px; font-weight: 700; color: #E74C3C; margin-bottom: 4px; }
+.bannerText { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+
+/* 自救方法 */
+.selfHelp { margin-bottom: 36px; }
+.selfHelpGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.selfHelpCard { padding: 24px; background: rgba(255,255,255,0.6); backdrop-filter: blur(12px); border-radius: 20px; border: 1px solid rgba(255,140,105,0.06); transition: all 0.2s; }
+.selfHelpCard:hover { background: rgba(255,255,255,0.85); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+.selfHelpIcon { font-size: 32px; display: block; margin-bottom: 12px; }
+.selfHelpTitle { font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+.selfHelpDesc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+/* 资源 */
+.resources { margin-bottom: 36px; }
+.resourceGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.resourceCard { padding: 24px; background: rgba(255,255,255,0.6); backdrop-filter: blur(12px); border-radius: 20px; border: 1px solid rgba(255,140,105,0.06); }
+.resourceIcon { font-size: 28px; display: block; margin-bottom: 10px; }
+.resourceTitle { font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 14px; }
+.resourceList { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.resourceList li { font-size: 13px; color: var(--text-secondary); padding-left: 18px; position: relative; line-height: 1.5; }
+.resourceList li::before { content: '•'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+/* 底部 */
+.footer { text-align: center; padding: 32px 0; }
+.footer p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+
+@media (max-width: 768px) {
+  .hotlineCard { flex-wrap: wrap; }
+  .hotlinePhone { width: 100%; text-align: center; margin-top: 8px; display: block; }
+  .selfHelpGrid, .resourceGrid { grid-template-columns: 1fr; }
+  .banner { flex-direction: column; text-align: center; }
+}

@@ -1,0 +1,112 @@
+.footer {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255,140,105,0.08);
+  margin-top: 60px;
+  padding: 48px 0 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 功能卡片 */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.featureCard {
+  flex: 1 1 200px;
+  max-width: 240px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.04);
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.23,1,0.32,1);
+}
+
+.featureCard:hover {
+  background: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+}
+
+.featureIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.featureText { flex: 1; min-width: 0; }
+.featureTitle { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+.featureDesc { font-size: 11px; color: var(--text-light); line-height: 1.4; }
+.featureArrow { font-size: 18px; font-weight: 600; opacity: 0; transition: all 0.3s; flex-shrink: 0; }
+.featureCard:hover .featureArrow { opacity: 1; transform: translateX(3px); }
+
+/* 分隔线 */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,140,105,0.12), transparent);
+  margin-bottom: 36px;
+}
+
+/* 导航网格 */
+.navGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-bottom: 36px;
+}
+
+.colTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.colList { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.colLink {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+a.colLink:hover { color: var(--primary); }
+
+/* 底部品牌 */
+.bottom {
+  border-top: 1px solid rgba(0,0,0,0.04);
+  padding: 20px 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; }
+.brandLogo { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+.brandTag { font-size: 12px; color: var(--text-light); padding: 2px 10px; background: var(--warm-1); border-radius: 50px; }
+.copy { font-size: 12px; color: var(--text-light); }
+
+@media (max-width: 768px) {
+  .features { flex-direction: column; }
+  .featureCard { max-width: none; }
+  .navGrid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .bottom { flex-direction: column; gap: 12px; text-align: center; }
+}

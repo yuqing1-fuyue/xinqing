@@ -1,0 +1,4 @@
+/* App-level layout */
+.app-content {
+  padding-top: 72px; /* navbar height */
+}
