@@ -16,15 +16,13 @@ services:
       - key: NODE_ENV
         value: production
       - key: PORT
-        value: 3000
+        value: "3000"
       - key: JWT_SECRET
         generateValue: true
       - key: ENCRYPTION_KEY
         generateValue: true
       - key: CORS_ORIGIN
-        value: https://yuqingfuyue.onrender.com
-      - key: VITE_API_URL
-        value: /api
+        value: https://新青前端.onrender.com  # 替换成实际的前端Render域名
       - key: RATE_LIMIT_WINDOW_MS
         value: "900000"
       - key: RATE_LIMIT_MAX_REQUESTS
@@ -32,4 +30,4 @@ services:
 
     # 自定义域名（部署后在 Render Dashboard 绑定）
     # domains:
-    #   - yuqingfuyue.com
+    #   - api.yuqingfuyue.com

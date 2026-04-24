@@ -36,11 +36,11 @@ app.use(helmet({
   crossOriginEmbedderPolicy: false
 }));
 
-// CORS配置
+// CORS配置 - 分离部署：允许前端域名跨域
 const corsOrigins = process.env.CORS_ORIGIN 
   ? process.env.CORS_ORIGIN.split(',') 
   : (process.env.NODE_ENV === 'production' 
-      ? ['https://yuqingfuyue.onrender.com'] 
+      ? ['https://新青前端.onrender.com']  // 替换成你前端的实际Render域名
       : ['http://localhost:5175', 'http://localhost:5176']);
   
 app.use(cors({
@@ -75,13 +75,7 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'));
 }
 
-// 静态文件（前端构建产物）
-var frontendDist = process.env.NODE_ENV === 'production'
-  ? path.join(__dirname, '..', 'xinqing-frontend', 'dist')
-  : path.join(__dirname, '../../xinqing-frontend/dist');
-app.use(express.static(frontendDist));
-
-// API路由
+// API路由（分离部署：纯API，不托管前端静态文件）
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/moods', moodRoutes);
@@ -98,11 +92,6 @@ app.use('/api/admin', adminRoutes);
 // 健康检查
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
-
-// SPA路由 - 所有未匹配的路由返回前端
-app.get('*', (req, res) => {
-  res.sendFile(path.join(frontendDist, 'index.html'));
 });
 
 // 错误处理

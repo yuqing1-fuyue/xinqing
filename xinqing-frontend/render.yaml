@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: xinqing-frontend
+    env: docker
+    plan: free
+    region: singapore  # 或 global（前端用 Static Site 更省）
+    branch: main
+
+    envVars:
+      - key: VITE_API_URL
+        value: https://新青API.onrender.com/api
+
+    # 自定义域名（部署后在 Render Dashboard 绑定）
+    # domains:
+    #   - yuqingfuyue.com
